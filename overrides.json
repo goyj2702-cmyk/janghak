@@ -1,0 +1,605 @@
+{
+  "26766521": {
+    "kind": "모집",
+    "title": "동진나눔복지재단 장학생",
+    "org": "동진나눔복지재단",
+    "target": [
+      "학부 재학생",
+      "만 24세 이하",
+      "15학점↑ · 3.0↑",
+      "가계곤란자"
+    ],
+    "quota": "학과별 배정 (전자전기·건축·컴퓨터.AI·기타)",
+    "benefit": "100만원",
+    "benefitNote": "1인당 · 생활비성",
+    "deadline": "2026-10-23T17:00:00+09:00",
+    "deadlineText": "10.23(금) 17:00",
+    "apply": "nDRIMS 교외장학 신청",
+    "grades": {
+      "fresh": "yes",
+      "current": "yes",
+      "transfer": "check",
+      "graduate": "no"
+    },
+    "notes": {
+      "transfer": "직전학기 15학점·3.0 기준을 충족하는지 확인"
+    },
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "high",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766524": {
+    "kind": "모집",
+    "title": "은평구민장학재단 장학생",
+    "org": "은평구민장학재단",
+    "target": [
+      "은평구 2년↑ 거주",
+      "학업상 타지역 거주 예외"
+    ],
+    "quota": "분야별 선발",
+    "benefit": "공고문 PDF 기재",
+    "benefitNote": "일반·특기·나비 3개 분야",
+    "deadline": "2026-10-28T18:00:00+09:00",
+    "deadlineText": "10.12 ~ 10.28(수) 18:00",
+    "apply": "등기우편 · 방문접수",
+    "grades": {
+      "fresh": "yes",
+      "current": "yes",
+      "transfer": "yes",
+      "graduate": "yes"
+    },
+    "notes": {},
+    "allGrades": true,
+    "gradOnly": false,
+    "missing": [
+      "지원 금액(첨부 PDF)"
+    ],
+    "confidence": "medium",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766512": {
+    "kind": "모집",
+    "title": "윤영문화재단 신규장학생",
+    "org": "윤영문화재단",
+    "target": [
+      "서울·경기·인천 4년제 재학",
+      "직전학기 3.5↑",
+      "12학점↑ 이수"
+    ],
+    "quota": "인원 미기재",
+    "benefit": "200만원",
+    "benefitNote": "1학기 · 학업장려금(생활비성)",
+    "deadline": "2026-10-11T23:59:00+09:00",
+    "deadlineText": "10.11(일)",
+    "apply": "nDRIMS 교외장학 신청 · 서류 PDF 1개",
+    "grades": {
+      "fresh": "no",
+      "current": "yes",
+      "transfer": "no",
+      "graduate": "no"
+    },
+    "notes": {
+      "fresh": "공고에서 신입생 제외",
+      "transfer": "공고에서 편입생 제외"
+    },
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "high",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766513": {
+    "kind": "모집",
+    "title": "DHC 후배사랑 장학생",
+    "org": "Dongguk Honors Club",
+    "target": [
+      "학부 재학생",
+      "15학점↑ · 3.0↑",
+      "가계곤란자"
+    ],
+    "quota": "인원 미기재",
+    "benefit": "200만원",
+    "benefitNote": "1인당 · 생활비성",
+    "deadline": "2026-10-23T17:00:00+09:00",
+    "deadlineText": "10.23(금) 17:00",
+    "apply": "nDRIMS 신청서 출력 + 증빙 PDF",
+    "grades": {
+      "fresh": "yes",
+      "current": "yes",
+      "transfer": "check",
+      "graduate": "no"
+    },
+    "notes": {
+      "transfer": "직전학기 15학점·3.0 기준을 충족하는지 확인"
+    },
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "high",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766495": {
+    "kind": "모집",
+    "title": "아산재단 의생명과학분야 대학 장학생 (2027)",
+    "org": "아산사회복지재단",
+    "target": [
+      "재단 지원 대학 재학생",
+      "2·3·4학년",
+      "평점 3.7↑ (4.5 만점)",
+      "의생명과학 대학원 진학 목표"
+    ],
+    "quota": "인원 미확인",
+    "benefit": "연 600만원",
+    "benefitNote": "재단 사업 기준",
+    "deadline": null,
+    "deadlineText": "2027년도 마감일 미공개 (작년은 10월 말 마감)",
+    "apply": "아산사회복지재단 접수",
+    "grades": {
+      "fresh": "no",
+      "current": "yes",
+      "transfer": "check",
+      "graduate": "no"
+    },
+    "notes": {
+      "fresh": "2학년 이상만 지원",
+      "transfer": "편입 후 2학년 이상이면 가능",
+      "graduate": "대학원생은 별도 대학원 장학"
+    },
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [
+      "마감일",
+      "선발 인원"
+    ],
+    "confidence": "medium",
+    "analysisSource": {
+      "label": "아산사회복지재단 장학사업 안내",
+      "url": "https://www.asanfoundation.or.kr/af/bsns.supervision.scholarship0.sp?mid=10204"
+    },
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766493": {
+    "kind": "모집",
+    "title": "아산재단 북한이탈청소년 장학생 (2027)",
+    "org": "아산사회복지재단",
+    "target": [
+      "재단 지원 대학 재학생",
+      "2·3·4학년",
+      "북한이탈청소년(정부 보호결정)"
+    ],
+    "quota": "인원 미확인",
+    "benefit": "연 600만원",
+    "benefitNote": "재단 사업 기준",
+    "deadline": null,
+    "deadlineText": "2027년도 마감일 미공개",
+    "apply": "아산사회복지재단 접수",
+    "grades": {
+      "fresh": "no",
+      "current": "check",
+      "transfer": "check",
+      "graduate": "no"
+    },
+    "notes": {
+      "fresh": "2학년 이상만 지원",
+      "current": "북한이탈청소년만 해당",
+      "transfer": "북한이탈청소년·2학년 이상만 해당"
+    },
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [
+      "마감일",
+      "선발 인원"
+    ],
+    "confidence": "medium",
+    "analysisSource": {
+      "label": "아산사회복지재단 장학사업 안내",
+      "url": "https://www.asanfoundation.or.kr/af/bsns.supervision.scholarship0.sp?mid=10204"
+    },
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766447": {
+    "kind": "모집",
+    "title": "대산농촌재단 대산장학생 (2027)",
+    "org": "대산농촌재단",
+    "target": [
+      "농업·농촌 분야 인재",
+      "세부 자격 선발요강 확인"
+    ],
+    "quota": "인원 미확인",
+    "benefit": "등록금 전액",
+    "benefitNote": "2027년도 장학 · 선발요강 기준",
+    "deadline": "2026-11-11T23:59:00+09:00",
+    "deadlineText": "~11.11(수)",
+    "apply": "대산농촌재단 접수 (선발요강 PDF)",
+    "grades": {
+      "fresh": "check",
+      "current": "check",
+      "transfer": "check",
+      "graduate": "check"
+    },
+    "notes": {
+      "fresh": "학년·전공 조건은 선발요강 확인",
+      "current": "학년·전공 조건은 선발요강 확인",
+      "transfer": "학년·전공 조건은 선발요강 확인",
+      "graduate": "학년·전공 조건은 선발요강 확인"
+    },
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [
+      "지원 자격",
+      "선발 인원"
+    ],
+    "confidence": "low",
+    "analysisSource": {
+      "label": "타 대학 장학 게시판(고려대·서강대) 공고 제목",
+      "url": "https://github.com/seonju5543-web/hanggonggan/issues/403"
+    },
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766441": {
+    "kind": "모집",
+    "title": "우양재단 동행 장학생",
+    "org": "우양재단",
+    "target": [
+      "4년제·전문대 재학생",
+      "학자금지원구간 2분위 이하",
+      "가족 돌봄 청년"
+    ],
+    "quota": "11명",
+    "benefit": "100만원",
+    "benefitNote": "1인당 · 2026년 1회 지원",
+    "deadline": "2026-10-18T23:59:00+09:00",
+    "deadlineText": "~10.18(일)",
+    "apply": "신청서·공문은 원문 첨부 확인",
+    "grades": {
+      "fresh": "yes",
+      "current": "yes",
+      "transfer": "yes",
+      "graduate": "no"
+    },
+    "notes": {
+      "graduate": "학부·전문대 재학생 대상"
+    },
+    "allGrades": true,
+    "gradOnly": false,
+    "missing": [
+      "신청 방법"
+    ],
+    "confidence": "medium",
+    "analysisSource": {
+      "label": "서울대 수의과대학 게시 공고",
+      "url": "https://vet.snu.ac.kr/33749/"
+    },
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766395": {
+    "kind": "모집",
+    "title": "논산시장학회 학업장려 장학생",
+    "org": "(재)논산시장학회",
+    "target": [
+      "2026 대학 신입생",
+      "2003.1.1 이후 출생",
+      "본인·부모 논산 1년↑ 거주"
+    ],
+    "quota": "인원 미기재",
+    "benefit": "150만원",
+    "benefitNote": "1인 · 생활비",
+    "deadline": "2026-10-30T18:00:00+09:00",
+    "deadlineText": "10.30(금) 18:00 · 등기우편은 당일 소인까지 인정",
+    "apply": "방문 · 등기우편",
+    "grades": {
+      "fresh": "yes",
+      "current": "no",
+      "transfer": "no",
+      "graduate": "no"
+    },
+    "notes": {},
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "high",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766403": {
+    "kind": "모집",
+    "title": "대전청년내일재단 인재육성(성취) 장학생",
+    "org": "대전청년내일재단",
+    "target": [
+      "대전 연고 2학년 이상 대학생"
+    ],
+    "quota": "",
+    "benefit": "1인 150만원",
+    "benefitNote": "",
+    "deadline": "2026-10-08T17:00:00+09:00",
+    "deadlineText": "연장 마감 10.08(목) 17:00",
+    "apply": "",
+    "grades": {
+      "fresh": "check",
+      "current": "check",
+      "transfer": "check",
+      "graduate": "check"
+    },
+    "notes": {},
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "medium",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766275": {
+    "kind": "모집",
+    "title": "동국리더장학",
+    "org": "동국대학교 장학팀",
+    "target": [
+      "정규학기 재학",
+      "직전학기 15학점↑",
+      "평점 3.0↑",
+      "휴학·초과학기 제외"
+    ],
+    "quota": "조직별 배정(붙임1)",
+    "benefit": "등록금성 장학",
+    "benefitNote": "수업료 범위 · 타 장학 중복 가능 · 금액은 붙임1",
+    "deadline": "2026-10-14T23:59:00+09:00",
+    "deadlineText": "nDRIMS 신청 ~10.14(수) 23:59 · 신청서 제출 10.12 ~ 10.16(금) 15:00",
+    "apply": "nDRIMS 동국리더 신청 → 신청서 출력·서명 제출",
+    "grades": {
+      "fresh": "yes",
+      "current": "yes",
+      "transfer": "check",
+      "graduate": "no"
+    },
+    "notes": {
+      "transfer": "직전학기 15학점·3.0 기준을 충족하는지 확인"
+    },
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "high",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766277": {
+    "kind": "모집",
+    "title": "푸른등대 한수원 K-원전 장학금",
+    "org": "한국장학재단 · 한국수력원자력",
+    "target": [
+      "원자력 관련 학과 재학생"
+    ],
+    "quota": "",
+    "benefit": "학기당 300만원 (작년 기준)",
+    "benefitNote": "",
+    "deadline": "2026-09-28T23:59:00+09:00",
+    "deadlineText": "~9.28",
+    "apply": "",
+    "grades": {
+      "fresh": "check",
+      "current": "check",
+      "transfer": "check",
+      "graduate": "check"
+    },
+    "notes": {},
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "medium",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766267": {
+    "kind": "모집",
+    "title": "고속도로 장학생",
+    "org": "한국도로공사",
+    "target": [
+      "고속도로 사고 피해가정 자녀"
+    ],
+    "quota": "",
+    "benefit": "대학생 1인 최대 500만원",
+    "benefitNote": "",
+    "deadline": "2026-10-11T23:59:00+09:00",
+    "deadlineText": "9.14 ~ 10.11(일) 우편 소인",
+    "apply": "",
+    "grades": {
+      "fresh": "check",
+      "current": "check",
+      "transfer": "check",
+      "graduate": "check"
+    },
+    "notes": {},
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "medium",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766256": {
+    "kind": "모집",
+    "title": "서초구 AI·ICT 인재 장학생 (문주장학재단)",
+    "org": "외부 재단",
+    "target": [
+      "서초구 거주·AI·ICT 학과 2학년 이상"
+    ],
+    "quota": "",
+    "benefit": "2학기 등록금 전액",
+    "benefitNote": "",
+    "deadline": "2026-10-08T23:59:00+09:00",
+    "deadlineText": "~10.08(목)",
+    "apply": "",
+    "grades": {
+      "fresh": "check",
+      "current": "check",
+      "transfer": "check",
+      "graduate": "check"
+    },
+    "notes": {},
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "medium",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766073": {
+    "kind": "모집",
+    "title": "JW이종호재단 기초과학자 주거장학",
+    "org": "JW이종호재단",
+    "target": [
+      "기초과학 박사·석박통합 과정",
+      "내국인 연구자"
+    ],
+    "quota": "인원 미기재",
+    "benefit": "주거비 지원",
+    "benefitNote": "1인 최대 3년",
+    "deadline": "2026-10-30T23:59:00+09:00",
+    "deadlineText": "10.01 ~ 10.30(금)",
+    "apply": "재단 이메일 접수 (jwf@jwhealthcare.com)",
+    "grades": {
+      "fresh": "no",
+      "current": "no",
+      "transfer": "no",
+      "graduate": "yes"
+    },
+    "notes": {},
+    "allGrades": false,
+    "gradOnly": true,
+    "missing": [],
+    "confidence": "high",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766078": {
+    "kind": "모집",
+    "title": "인천인재평생교육진흥원 하반기 장학생",
+    "org": "(재)인천인재평생교육진흥원",
+    "target": [
+      "대학 정규학기 재학생"
+    ],
+    "quota": "",
+    "benefit": "종류별 상이(6종)",
+    "benefitNote": "",
+    "deadline": "2026-10-08T23:59:00+09:00",
+    "deadlineText": "9.10 ~ 10.08(목)",
+    "apply": "",
+    "grades": {
+      "fresh": "check",
+      "current": "check",
+      "transfer": "check",
+      "graduate": "check"
+    },
+    "notes": {},
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "medium",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766033": {
+    "kind": "모집",
+    "title": "제13회 동교인재상",
+    "org": "수림재단",
+    "target": [
+      "4년제 대학 최종 학년",
+      "휴학생 포함"
+    ],
+    "quota": "20명 이내 (작년 기준)",
+    "benefit": "대상 500만원",
+    "benefitNote": "금상 300만 · 은상 100만 · 1회성 포상 (작년 기준)",
+    "deadline": null,
+    "deadlineText": "2026년 마감일 미공개 (작년 10.17 우편 소인 마감)",
+    "apply": "재단에 등기우편 지원",
+    "grades": {
+      "fresh": "no",
+      "current": "check",
+      "transfer": "check",
+      "graduate": "no"
+    },
+    "notes": {
+      "fresh": "최종 학년만 지원",
+      "current": "최종 학년(4학년)만 해당",
+      "transfer": "최종 학년만 해당"
+    },
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [
+      "마감일",
+      "2026년 세부 조건"
+    ],
+    "confidence": "low",
+    "analysisSource": {
+      "label": "2025년 제12회 공고 (콘테스트코리아)",
+      "url": "https://www.contestkorea.com/sub/view.php?Txt_gbn=1&Txt_bcode=030310001&str_no=202509010108"
+    },
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26766004": {
+    "kind": "모집",
+    "title": "두을장학재단 제29기 장학생",
+    "org": "두을장학재단",
+    "target": [],
+    "quota": "",
+    "benefit": "선발요강 참조",
+    "benefitNote": "",
+    "deadline": "2026-09-30T18:00:00+09:00",
+    "deadlineText": "~9.30 18:00",
+    "apply": "",
+    "grades": {
+      "fresh": "check",
+      "current": "check",
+      "transfer": "check",
+      "graduate": "check"
+    },
+    "notes": {},
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "medium",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26765973": {
+    "kind": "모집",
+    "title": "성남시 다자녀가구(셋째부터) 등록금 지원",
+    "org": "성남시",
+    "target": [
+      "성남시 1년↑ 거주 셋째 이상 대학생"
+    ],
+    "quota": "",
+    "benefit": "학기당 최대 100만원",
+    "benefitNote": "",
+    "deadline": "2026-09-30T23:59:00+09:00",
+    "deadlineText": "~9.30",
+    "apply": "",
+    "grades": {
+      "fresh": "check",
+      "current": "check",
+      "transfer": "check",
+      "graduate": "check"
+    },
+    "notes": {},
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "medium",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  },
+  "26765936": {
+    "kind": "모집",
+    "title": "푸른등대 기부장학금 (2026-2)",
+    "org": "한국장학재단",
+    "target": [],
+    "quota": "",
+    "benefit": "요약표 참조",
+    "benefitNote": "",
+    "deadline": "2026-09-10T18:00:00+09:00",
+    "deadlineText": "8.26 ~ 9.10 18:00",
+    "apply": "",
+    "grades": {
+      "fresh": "check",
+      "current": "check",
+      "transfer": "check",
+      "graduate": "check"
+    },
+    "notes": {},
+    "allGrades": false,
+    "gradOnly": false,
+    "missing": [],
+    "confidence": "medium",
+    "_note": "2026-10-11 사람이 원문·재단 공고로 확인한 값"
+  }
+}

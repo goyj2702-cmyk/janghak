@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* 디자인 토큰: 동국 딥오렌지 포인트 + 버건디 보조, 화이트/그레이 바탕 (밝은 테마 단일) */
+@theme {
+  --color-brand-50: #fff4ec;
+  --color-brand-100: #ffe3cf;
+  --color-brand-500: #e8681c;
+  --color-brand-600: #cf5513;
+  --color-brand-700: #a6420c;
+  --color-wine-50: #f9eef0;
+  --color-wine-100: #f1d6db;
+  --color-wine-600: #8a2433;
+  --color-wine-700: #6e1b28;
+  --color-paper: #f5f5f4;
+  --color-line: #e7e4e1;
+  --color-ink: #1f1b19;
+  --color-mute: #6b6460;
+
+  --font-display: "Jua", "Gothic A1", system-ui, sans-serif;
+  --font-sans: "Gothic A1", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(31 27 25 / 0.04), 0 8px 24px -16px rgb(31 27 25 / 0.25);
+  --shadow-lift: 0 2px 4px rgb(31 27 25 / 0.05), 0 18px 36px -18px rgb(166 66 12 / 0.45);
+
+  --animate-bob: bob 1.6s ease-in-out infinite;
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-6px) rotate(1deg); }
+  }
+}
+
+@layer base {
+  :root { color-scheme: light; }
+  html, body { background: var(--color-paper); color: var(--color-ink); }
+  body { font-family: var(--font-sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  :focus-visible { outline: 2px solid var(--color-brand-500); outline-offset: 2px; border-radius: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
