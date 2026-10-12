@@ -1,10 +1,52 @@
 {
-  "updatedAt": "2026-10-11T14:50:00.000Z",
+  "updatedAt": "2026-10-12T17:23:20.438Z",
   "lookbackDays": 75,
-  "model": "Claude (수동 분석)",
-  "seed": false,
+  "model": "openai/gpt-4o",
   "source": "https://www.dongguk.edu/article/JANGHAKNOTICE/list",
   "notices": [
+    {
+      "id": "26766524",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766524",
+      "posted": "2026-10-08",
+      "type": "scholarship",
+      "files": [
+        "2026. 하반기 은평구민 장학생 선발 공고.pdf"
+      ],
+      "posterCount": 0,
+      "analyzed": true,
+      "analyzedAt": "2026-10-12T17:16:47.276Z",
+      "kind": "모집",
+      "title": "은평구민장학재단 장학생",
+      "org": "은평구민장학재단",
+      "target": [
+        "은평구 2년↑ 거주",
+        "학업상 타지역 거주 예외"
+      ],
+      "quota": "분야별 선발",
+      "benefit": "공고문 PDF 기재",
+      "benefitNote": "일반·특기·나비 3개 분야",
+      "applyStart": null,
+      "deadline": "2026-10-28T18:00:00+09:00",
+      "deadlineText": "10.12 ~ 10.28(수) 18:00",
+      "apply": "등기우편 · 방문접수",
+      "grades": {
+        "fresh": "yes",
+        "current": "yes",
+        "transfer": "yes",
+        "graduate": "yes"
+      },
+      "notes": {},
+      "allGrades": true,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "medium",
+      "missing": [
+        "지원 금액(첨부 PDF)"
+      ],
+      "engine": "manual"
+    },
     {
       "id": "26766521",
       "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766521",
@@ -13,7 +55,7 @@
       "files": [],
       "posterCount": 0,
       "analyzed": true,
-      "analyzedAt": "2026-10-11T04:30:00.000Z",
+      "analyzedAt": "2026-10-12T17:16:54.304Z",
       "kind": "모집",
       "title": "동진나눔복지재단 장학생",
       "org": "동진나눔복지재단",
@@ -45,49 +87,50 @@
         "본문"
       ],
       "confidence": "high",
-      "missing": []
+      "missing": [],
+      "engine": "manual"
     },
     {
-      "id": "26766524",
-      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766524",
-      "posted": "2026-10-08",
+      "id": "26766513",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766513",
+      "posted": "2026-10-07",
       "type": "scholarship",
-      "files": [
-        "2026. 하반기 은평구민 장학생 선발 공고.pdf"
-      ],
+      "files": [],
       "posterCount": 0,
       "analyzed": true,
-      "analyzedAt": "2026-10-11T04:30:00.000Z",
+      "analyzedAt": "2026-10-12T17:17:01.331Z",
       "kind": "모집",
-      "title": "은평구민장학재단 장학생",
-      "org": "은평구민장학재단",
+      "title": "DHC 후배사랑 장학생",
+      "org": "Dongguk Honors Club",
       "target": [
-        "은평구 2년↑ 거주",
-        "학업상 타지역 거주 예외"
+        "학부 재학생",
+        "15학점↑ · 3.0↑",
+        "가계곤란자"
       ],
-      "quota": "분야별 선발",
-      "benefit": "공고문 PDF 기재",
-      "benefitNote": "일반·특기·나비 3개 분야",
+      "quota": "인원 미기재",
+      "benefit": "200만원",
+      "benefitNote": "1인당 · 생활비성",
       "applyStart": null,
-      "deadline": "2026-10-28T18:00:00+09:00",
-      "deadlineText": "10.12 ~ 10.28(수) 18:00",
-      "apply": "등기우편 · 방문접수",
+      "deadline": "2026-10-23T17:00:00+09:00",
+      "deadlineText": "10.23(금) 17:00",
+      "apply": "nDRIMS 신청서 출력 + 증빙 PDF",
       "grades": {
         "fresh": "yes",
         "current": "yes",
-        "transfer": "yes",
-        "graduate": "yes"
+        "transfer": "check",
+        "graduate": "no"
       },
-      "notes": {},
-      "allGrades": true,
+      "notes": {
+        "transfer": "직전학기 15학점·3.0 기준을 충족하는지 확인"
+      },
+      "allGrades": false,
       "gradOnly": false,
       "evidence": [
         "본문"
       ],
-      "confidence": "medium",
-      "missing": [
-        "지원 금액(첨부 PDF)"
-      ]
+      "confidence": "high",
+      "missing": [],
+      "engine": "manual"
     },
     {
       "id": "26766512",
@@ -99,7 +142,7 @@
       ],
       "posterCount": 0,
       "analyzed": true,
-      "analyzedAt": "2026-10-11T04:30:00.000Z",
+      "analyzedAt": "2026-10-12T17:17:08.369Z",
       "kind": "모집",
       "title": "윤영문화재단 신규장학생",
       "org": "윤영문화재단",
@@ -131,48 +174,44 @@
         "본문"
       ],
       "confidence": "high",
-      "missing": []
+      "missing": [],
+      "engine": "manual"
     },
     {
-      "id": "26766513",
-      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766513",
-      "posted": "2026-10-07",
+      "id": "26766497",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766497",
+      "posted": "2026-10-06",
       "type": "scholarship",
       "files": [],
       "posterCount": 0,
-      "analyzed": true,
-      "analyzedAt": "2026-10-11T04:30:00.000Z",
-      "kind": "모집",
-      "title": "DHC 후배사랑 장학생",
-      "org": "Dongguk Honors Club",
-      "target": [
-        "학부 재학생",
-        "15학점↑ · 3.0↑",
-        "가계곤란자"
-      ],
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:17:15.400Z",
+      "kind": "결과발표",
+      "title": "2026-2학기 고양이엄마(송수경)장학 장학생 선발 결과 안내 등록일 2026.10.06. 조회 713",
+      "org": "",
+      "target": [],
       "quota": "인원 미기재",
-      "benefit": "200만원",
-      "benefitNote": "1인당 · 생활비성",
+      "benefit": "1인당 200만원",
+      "benefitNote": "",
       "applyStart": null,
-      "deadline": "2026-10-23T17:00:00+09:00",
-      "deadlineText": "10.23(금) 17:00",
-      "apply": "nDRIMS 신청서 출력 + 증빙 PDF",
+      "deadline": "2026-10-11T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
       "grades": {
-        "fresh": "yes",
-        "current": "yes",
+        "fresh": "check",
+        "current": "check",
         "transfer": "check",
         "graduate": "no"
       },
-      "notes": {
-        "transfer": "직전학기 15학점·3.0 기준을 충족하는지 확인"
-      },
+      "notes": {},
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
         "본문"
       ],
-      "confidence": "high",
-      "missing": []
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
     },
     {
       "id": "26766495",
@@ -182,6 +221,7 @@
       "files": [],
       "posterCount": 1,
       "analyzed": true,
+      "analyzedAt": "2026-10-12T17:17:24.974Z",
       "kind": "모집",
       "title": "아산재단 의생명과학분야 대학 장학생 (2027)",
       "org": "아산사회복지재단",
@@ -212,14 +252,14 @@
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
       "confidence": "medium",
       "missing": [
         "마감일",
         "선발 인원"
       ],
-      "analyzedAt": "2026-10-11T14:50:00.000Z",
+      "engine": "manual",
       "analysisSource": {
         "label": "아산사회복지재단 장학사업 안내",
         "url": "https://www.asanfoundation.or.kr/af/bsns.supervision.scholarship0.sp?mid=10204"
@@ -233,6 +273,7 @@
       "files": [],
       "posterCount": 1,
       "analyzed": true,
+      "analyzedAt": "2026-10-12T17:17:36.205Z",
       "kind": "모집",
       "title": "아산재단 북한이탈청소년 장학생 (2027)",
       "org": "아산사회복지재단",
@@ -262,14 +303,14 @@
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
       "confidence": "medium",
       "missing": [
         "마감일",
         "선발 인원"
       ],
-      "analyzedAt": "2026-10-11T14:50:00.000Z",
+      "engine": "manual",
       "analysisSource": {
         "label": "아산사회복지재단 장학사업 안내",
         "url": "https://www.asanfoundation.or.kr/af/bsns.supervision.scholarship0.sp?mid=10204"
@@ -285,6 +326,7 @@
       ],
       "posterCount": 1,
       "analyzed": true,
+      "analyzedAt": "2026-10-12T17:17:47.463Z",
       "kind": "모집",
       "title": "대산농촌재단 대산장학생 (2027)",
       "org": "대산농촌재단",
@@ -314,14 +356,14 @@
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
       "confidence": "low",
       "missing": [
         "지원 자격",
         "선발 인원"
       ],
-      "analyzedAt": "2026-10-11T14:50:00.000Z",
+      "engine": "manual",
       "analysisSource": {
         "label": "타 대학 장학 게시판(고려대·서강대) 공고 제목",
         "url": "https://github.com/seonju5543-web/hanggonggan/issues/403"
@@ -335,6 +377,7 @@
       "files": [],
       "posterCount": 1,
       "analyzed": true,
+      "analyzedAt": "2026-10-12T17:17:58.412Z",
       "kind": "모집",
       "title": "우양재단 동행 장학생",
       "org": "우양재단",
@@ -362,17 +405,55 @@
       "allGrades": true,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
       "confidence": "medium",
       "missing": [
         "신청 방법"
       ],
-      "analyzedAt": "2026-10-11T14:50:00.000Z",
+      "engine": "manual",
       "analysisSource": {
         "label": "서울대 수의과대학 게시 공고",
         "url": "https://vet.snu.ac.kr/33749/"
       }
+    },
+    {
+      "id": "26766403",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766403",
+      "posted": "2026-09-28",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": true,
+      "analyzedAt": "2026-10-12T17:18:08.092Z",
+      "kind": "모집",
+      "title": "대전청년내일재단 인재육성(성취) 장학생",
+      "org": "대전청년내일재단",
+      "target": [
+        "대전 연고 2학년 이상 대학생"
+      ],
+      "quota": "",
+      "benefit": "1인 150만원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-10-08T17:00:00+09:00",
+      "deadlineText": "연장 마감 10.08(목) 17:00",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "check"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "medium",
+      "missing": [],
+      "engine": "manual"
     },
     {
       "id": "26766395",
@@ -380,12 +461,12 @@
       "posted": "2026-09-28",
       "type": "scholarship",
       "files": [
-        "논산시장학회 장학생 선발 공고문(발췌본).hwp",
-        "논산시장학회 장학생 신청 서식.hwp"
+        "2026년도 하반기 재단법인 논산시장학회 장학생 선발 공고문(발췌본).hwp",
+        "2026년도 하반기 재단법인 논산시장학회 장학생 신청 서식.hwp"
       ],
       "posterCount": 0,
       "analyzed": true,
-      "analyzedAt": "2026-10-11T04:30:00.000Z",
+      "analyzedAt": "2026-10-12T17:18:15.124Z",
       "kind": "모집",
       "title": "논산시장학회 학업장려 장학생",
       "org": "(재)논산시장학회",
@@ -414,28 +495,72 @@
         "본문"
       ],
       "confidence": "high",
-      "missing": []
+      "missing": [],
+      "engine": "manual"
     },
     {
-      "id": "26766403",
-      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766403",
-      "posted": "2026-09-28",
+      "id": "26766280",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766280",
+      "posted": "2026-09-17",
       "type": "scholarship",
-      "files": [],
-      "posterCount": 1,
-      "analyzed": true,
-      "kind": "모집",
-      "title": "대전청년내일재단 인재육성(성취) 장학생",
-      "org": "대전청년내일재단",
-      "target": [
-        "대전 연고 2학년 이상 대학생"
+      "files": [
+        "자주 묻는 질문(26년 하반기)_봄내장학금.hwp",
+        "2026년 하반기 봄내장학생 선발 공고(게시용-QR).hwp"
       ],
-      "quota": "",
-      "benefit": "1인 150만원",
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:18:22.162Z",
+      "kind": "모집",
+      "title": "(재)춘천인재육성장학재단 2026년 하반기 봄내장학생 선발 안내 등록일 2026.09.17. 조회 736",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "100만 원",
       "benefitNote": "",
       "applyStart": null,
-      "deadline": "2026-10-08T17:00:00+09:00",
-      "deadlineText": "연장 마감 10.08(목) 17:00",
+      "deadline": "2026-10-07T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26766277",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766277",
+      "posted": "2026-09-17",
+      "type": "scholarship",
+      "files": [
+        "1. K-원전 장학금 사업 계획 및 업무처리기준.hwp",
+        "2. K-원전 장학금 신청가능 학과(전공)_대학원 포함.hwp"
+      ],
+      "posterCount": 3,
+      "analyzed": true,
+      "analyzedAt": "2026-10-12T17:18:31.473Z",
+      "kind": "모집",
+      "title": "푸른등대 한수원 K-원전 장학금",
+      "org": "한국장학재단 · 한국수력원자력",
+      "target": [
+        "원자력 관련 학과 재학생"
+      ],
+      "quota": "",
+      "benefit": "학기당 300만원 (작년 기준)",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-28T23:59:00+09:00",
+      "deadlineText": "~9.28",
       "apply": "",
       "grades": {
         "fresh": "check",
@@ -447,11 +572,11 @@
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
       "confidence": "medium",
       "missing": [],
-      "analyzedAt": "2026-10-11T14:50:00.000Z"
+      "engine": "manual"
     },
     {
       "id": "26766275",
@@ -459,12 +584,12 @@
       "posted": "2026-09-17",
       "type": "scholarship",
       "files": [
-        "동국리더장학 신청매뉴얼(학생용)_엔드림스.pdf",
-        "2026-2학기 동국리더장학 지급 기준 및 신청서 제출처.xlsx"
+        "2. 동국리더장학 신청매뉴얼(학생용)_엔드림스.pdf",
+        "1. 2026-2학기 동국리더장학 지급 기준 및 신청서 제출처.xlsx"
       ],
       "posterCount": 0,
       "analyzed": true,
-      "analyzedAt": "2026-10-11T04:30:00.000Z",
+      "analyzedAt": "2026-10-12T17:18:38.499Z",
       "kind": "모집",
       "title": "동국리더장학",
       "org": "동국대학교 장학팀",
@@ -496,31 +621,31 @@
         "본문"
       ],
       "confidence": "high",
-      "missing": []
+      "missing": [],
+      "engine": "manual"
     },
     {
-      "id": "26766277",
-      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766277",
+      "id": "26766270",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766270",
       "posted": "2026-09-17",
       "type": "scholarship",
       "files": [
-        "사업 계획 및 업무처리기준.hwp",
-        "신청가능 학과(전공).hwp"
+        "개인정보수집동의서.pdf",
+        "장학생신청서.pdf"
       ],
-      "posterCount": 1,
-      "analyzed": true,
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:18:45.525Z",
       "kind": "모집",
-      "title": "푸른등대 한수원 K-원전 장학금",
-      "org": "한국장학재단 · 한국수력원자력",
-      "target": [
-        "원자력 관련 학과 재학생"
-      ],
-      "quota": "",
-      "benefit": "학기당 300만원 (작년 기준)",
+      "title": "2026년 2학기 파안장학 선발 안내 등록일 2026.09.17. 조회 1423",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "2,000,000원",
       "benefitNote": "",
       "applyStart": null,
-      "deadline": "2026-09-28T23:59:00+09:00",
-      "deadlineText": "~9.28",
+      "deadline": "2026-09-28T13:00:00+09:00",
+      "deadlineText": "",
       "apply": "",
       "grades": {
         "fresh": "check",
@@ -532,11 +657,11 @@
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
-      "confidence": "medium",
+      "confidence": "low",
       "missing": [],
-      "analyzedAt": "2026-10-11T14:50:00.000Z"
+      "engine": "rules"
     },
     {
       "id": "26766267",
@@ -546,8 +671,9 @@
       "files": [
         "2026년 고속도로 장학생 선발 안내문.pdf"
       ],
-      "posterCount": 1,
+      "posterCount": 2,
       "analyzed": true,
+      "analyzedAt": "2026-10-12T17:18:55.925Z",
       "kind": "모집",
       "title": "고속도로 장학생",
       "org": "한국도로공사",
@@ -571,11 +697,50 @@
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
       "confidence": "medium",
       "missing": [],
-      "analyzedAt": "2026-10-11T14:50:00.000Z"
+      "engine": "manual"
+    },
+    {
+      "id": "26766263",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766263",
+      "posted": "2026-09-17",
+      "type": "scholarship",
+      "files": [
+        "동산장학회) 학(과)장 장학생 추천서(양식).hwp",
+        "동산장학회) 장학지원서 및 자기소개서(양식).hwp"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:19:02.951Z",
+      "kind": "모집",
+      "title": "2026년 2학기 동산장학 선발 안내 등록일 2026.09.17. 조회 1159",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "800만원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-27T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "nDRIMS 신청",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
     },
     {
       "id": "26766256",
@@ -585,6 +750,7 @@
       "files": [],
       "posterCount": 1,
       "analyzed": true,
+      "analyzedAt": "2026-10-12T17:19:12.650Z",
       "kind": "모집",
       "title": "서초구 AI·ICT 인재 장학생 (문주장학재단)",
       "org": "외부 재단",
@@ -608,11 +774,169 @@
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
       "confidence": "medium",
       "missing": [],
-      "analyzedAt": "2026-10-11T14:50:00.000Z"
+      "engine": "manual"
+    },
+    {
+      "id": "26766215",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766215",
+      "posted": "2026-09-14",
+      "type": "scholarship",
+      "files": [
+        "2. (학생용) 장학신청 매뉴얼.pdf"
+      ],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:19:39.610Z",
+      "kind": "모집",
+      "title": "2026-2학기 중소기업 취업연계 장학(희망사다리 Ⅰ유형) 신규장학생 선발 안내(9/1(화)~9/18(금)) 등록일 2026.09.14. 조회 898",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "200만원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-22T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26766186",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766186",
+      "posted": "2026-09-11",
+      "type": "scholarship",
+      "files": [
+        "1. 추천서.hwp",
+        "2. 장학생 신청서.hwp",
+        "3. 미래인재장학생 자기소개서.hwp",
+        "4. 개인정보 수집 동의서.hwp"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:19:46.639Z",
+      "kind": "모집",
+      "title": "2027학년도 미래인재육성재단 장학생 신청 안내(~9.22(화)까지) 등록일 2026.09.11. 조회 2698",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "학기당 3,500,000원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-22T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26766170",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766170",
+      "posted": "2026-09-10",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:19:57.827Z",
+      "kind": "결과발표",
+      "title": "2026-2학기 월드머시코리아장학 최종합격자 발표 등록일 2026.09.10. 조회 937",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-22T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26766078",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766078",
+      "posted": "2026-09-04",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": true,
+      "analyzedAt": "2026-10-12T17:20:15.785Z",
+      "kind": "모집",
+      "title": "인천인재평생교육진흥원 하반기 장학생",
+      "org": "(재)인천인재평생교육진흥원",
+      "target": [
+        "대학 정규학기 재학생"
+      ],
+      "quota": "",
+      "benefit": "종류별 상이(6종)",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-10-08T23:59:00+09:00",
+      "deadlineText": "9.10 ~ 10.08(목)",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "check"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "medium",
+      "missing": [],
+      "engine": "manual"
     },
     {
       "id": "26766073",
@@ -622,9 +946,9 @@
       "files": [
         "[포스터]2026기초과학자 장학사업 포스터.pdf"
       ],
-      "posterCount": 1,
+      "posterCount": 0,
       "analyzed": true,
-      "analyzedAt": "2026-10-11T04:30:00.000Z",
+      "analyzedAt": "2026-10-12T17:20:22.812Z",
       "kind": "모집",
       "title": "JW이종호재단 기초과학자 주거장학",
       "org": "JW이종호재단",
@@ -652,44 +976,44 @@
         "본문"
       ],
       "confidence": "high",
-      "missing": []
+      "missing": [],
+      "engine": "manual"
     },
     {
-      "id": "26766078",
-      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766078",
-      "posted": "2026-09-04",
+      "id": "26766034",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766034",
+      "posted": "2026-09-02",
       "type": "scholarship",
       "files": [],
-      "posterCount": 1,
-      "analyzed": true,
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:20:29.838Z",
       "kind": "모집",
-      "title": "인천인재평생교육진흥원 하반기 장학생",
-      "org": "(재)인천인재평생교육진흥원",
-      "target": [
-        "대학 정규학기 재학생"
-      ],
-      "quota": "",
-      "benefit": "종류별 상이(6종)",
+      "title": "(은평)삼천사 지역미래불자육성장학 장학생 선발 안내 등록일 2026.09.02. 조회 2894",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "100만원",
       "benefitNote": "",
       "applyStart": null,
-      "deadline": "2026-10-08T23:59:00+09:00",
-      "deadlineText": "9.10 ~ 10.08(목)",
-      "apply": "",
+      "deadline": "2026-09-21T12:00:00+09:00",
+      "deadlineText": "",
+      "apply": "nDRIMS 신청",
       "grades": {
         "fresh": "check",
         "current": "check",
         "transfer": "check",
-        "graduate": "check"
+        "graduate": "no"
       },
       "notes": {},
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
-      "confidence": "medium",
+      "confidence": "low",
       "missing": [],
-      "analyzedAt": "2026-10-11T14:50:00.000Z"
+      "engine": "rules"
     },
     {
       "id": "26766033",
@@ -699,6 +1023,7 @@
       "files": [],
       "posterCount": 1,
       "analyzed": true,
+      "analyzedAt": "2026-10-12T17:20:39.769Z",
       "kind": "모집",
       "title": "제13회 동교인재상",
       "org": "수림재단",
@@ -727,18 +1052,182 @@
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
       "confidence": "low",
       "missing": [
         "마감일",
         "2026년 세부 조건"
       ],
-      "analyzedAt": "2026-10-11T14:50:00.000Z",
+      "engine": "manual",
       "analysisSource": {
         "label": "2025년 제12회 공고 (콘테스트코리아)",
         "url": "https://www.contestkorea.com/sub/view.php?Txt_gbn=1&Txt_bcode=030310001&str_no=202509010108"
       }
+    },
+    {
+      "id": "26766026",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766026",
+      "posted": "2026-09-02",
+      "type": "scholarship",
+      "files": [
+        "2026년 상반기분 통영시 대학생 학자금 이자 지원 공고(안).pdf"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:20:46.818Z",
+      "kind": "모집",
+      "title": "2026년 상반기분 통영시 대학생 학자금 이자 지원 신청 안내 등록일 2026.09.02. 조회 411",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2027-06-30T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26766022",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766022",
+      "posted": "2026-09-01",
+      "type": "scholarship",
+      "files": [
+        "가. (별첨) 부모 명의 개인정보 제공 및 활용 동의서.pdf",
+        "가. (공고) 제36기 미래에셋 해외교환 장학생 선발 요강.pdf"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:20:53.853Z",
+      "kind": "모집",
+      "title": "제36기 미래에셋 해외교환 장학생 선발 안내(2027년 봄학기 파견) 등록일 2026.09.01. 조회 1253",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-10-06T15:00:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26766019",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766019",
+      "posted": "2026-09-01",
+      "type": "scholarship",
+      "files": [
+        "4.[별첨3] 개인정보 수집 이용 동의서.hwp",
+        "3.[별첨2]장학생 후보자 추천서(양식).hwp",
+        "2.[별첨1]장학생 지원신청서 및 자기소개서(양식).hwp",
+        "1.2026년 국가유산진흥원 전통 기ㆍ예능분야 및 매장유산 분야 우수 장학생 선발 공고.hwp"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:21:00.879Z",
+      "kind": "모집",
+      "title": "2026년 국가유산진흥원 전통 기·예능 분야 및 매장유산 관련 분야 우수 장학생 선발 안내 등록일 2026.09.01. 조회 639",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "1,500,000원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2027-02-30T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26766011",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766011",
+      "posted": "2026-09-01",
+      "type": "scholarship",
+      "files": [
+        "붙임3. 가구원 정보제공 동의 매뉴얼(웰로 'Wello' 앱).pdf",
+        "붙임2. 가구원 정보제공 동의 매뉴얼(홈페이지 모바일앱).pdf"
+      ],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:21:15.826Z",
+      "kind": "모집",
+      "title": "2026-2학기 국가장학금 신청자 가구원 동의 안내(미동의 시 장학금 지원 불가, ~9/16(수)) 등록일 2026.09.01. 조회 810",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-16T18:00:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
     },
     {
       "id": "26766007",
@@ -750,31 +1239,36 @@
       ],
       "posterCount": 1,
       "analyzed": false,
+      "analyzedAt": "2026-10-12T17:21:25.156Z",
       "kind": "모집",
-      "title": "포항시장학회 장학생",
-      "org": "포항시장학회",
+      "title": "포항시장학회 2026년도 장학생 선발 안내 등록일 2026.09.01. 조회 568",
+      "org": "",
       "target": [],
-      "quota": "",
+      "quota": "인원 미기재",
       "benefit": "",
       "benefitNote": "",
       "applyStart": null,
-      "deadline": null,
+      "deadline": "2026-09-16T23:59:00+09:00",
       "deadlineText": "",
       "apply": "",
       "grades": {
         "fresh": "check",
         "current": "check",
         "transfer": "check",
-        "graduate": "check"
+        "graduate": "no"
       },
       "notes": {},
       "allGrades": false,
       "gradOnly": false,
-      "evidence": [],
+      "evidence": [
+        "본문"
+      ],
       "confidence": "low",
       "missing": [
-        "포스터 분석 전"
-      ]
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
     },
     {
       "id": "26766004",
@@ -782,10 +1276,11 @@
       "posted": "2026-09-01",
       "type": "scholarship",
       "files": [
-        "제29기 두을장학생 선발요강.pdf"
+        "1. 제29기 두을장학생 선발요강.pdf"
       ],
       "posterCount": 1,
       "analyzed": true,
+      "analyzedAt": "2026-10-12T17:21:34.066Z",
       "kind": "모집",
       "title": "두을장학재단 제29기 장학생",
       "org": "두을장학재단",
@@ -807,11 +1302,167 @@
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
       "confidence": "medium",
       "missing": [],
-      "analyzedAt": "2026-10-11T14:50:00.000Z"
+      "engine": "manual"
+    },
+    {
+      "id": "26766001",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766001",
+      "posted": "2026-09-01",
+      "type": "scholarship",
+      "files": [
+        "붙임 1. 2026학년도 2학기 AI학업장려 학자금대출 개요.pdf"
+      ],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:21:46.192Z",
+      "kind": "안내",
+      "title": "2026-2학기 한국장학재단 AI학업장려 학자금대출 제도 (재안내) 등록일 2026.09.01. 조회 544",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": null,
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "마감일",
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765990",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765990",
+      "posted": "2026-08-31",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:21:53.219Z",
+      "kind": "모집",
+      "title": "2026학년도 안당학술장학재단 장학생 선발(생활비 1인 1,000,000원 / ~9.11(금)) 등록일 2026.08.31. 조회 1838",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "1인 1,000,000원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-11T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "nDRIMS 신청",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26765986",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765986",
+      "posted": "2026-08-31",
+      "type": "scholarship",
+      "files": [
+        "추천서양식.hwp",
+        "개인정보 수집 이용 및 제공 동의서(신).hwp"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:22:00.269Z",
+      "kind": "모집",
+      "title": "2026-2학기 유한재단 신규장학생 선발(학부생 1인당 300만원 생활비(한학기 지급)/~9.4.(금)까지) 등록일 2026.08.31. 조회 2155",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "1인당 300만원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-04T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "nDRIMS 신청",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26765979",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765979",
+      "posted": "2026-08-31",
+      "type": "scholarship",
+      "files": [
+        "[공고문]2026년 하반기 익산시 대학(원)생 학자금 이자지원 신청자 접수 공고.pdf",
+        "[안내문]2026년 하반기 익산시 대학생 학자금 대출이자 지원 신청.pdf"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:22:07.301Z",
+      "kind": "안내",
+      "title": "2026년 하반기 익산시 대학생 학자금 대출이자 지원사업 안내 등록일 2026.08.31. 조회 258",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "등록금 지원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2027-06-30T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "check"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
     },
     {
       "id": "26765973",
@@ -821,6 +1472,7 @@
       "files": [],
       "posterCount": 1,
       "analyzed": true,
+      "analyzedAt": "2026-10-12T17:22:19.768Z",
       "kind": "모집",
       "title": "성남시 다자녀가구(셋째부터) 등록금 지원",
       "org": "성남시",
@@ -844,11 +1496,11 @@
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
       "confidence": "medium",
       "missing": [],
-      "analyzedAt": "2026-10-11T14:50:00.000Z"
+      "engine": "manual"
     },
     {
       "id": "26765936",
@@ -856,11 +1508,12 @@
       "posted": "2026-08-27",
       "type": "scholarship",
       "files": [
-        "선발 내용 요약표.pdf",
-        "사업 계획서 및 업무처리기준.pdf"
+        "2. 2026년 2학기 푸른등대 기부장학금 신규장학생 선발 내용 요약표.pdf",
+        "1. 2026년 2학기 푸른등대 기부장학금 사업 계획서 및 업무처리기준.pdf"
       ],
       "posterCount": 1,
       "analyzed": true,
+      "analyzedAt": "2026-10-12T17:22:32.845Z",
       "kind": "모집",
       "title": "푸른등대 기부장학금 (2026-2)",
       "org": "한국장학재단",
@@ -882,11 +1535,1349 @@
       "allGrades": false,
       "gradOnly": false,
       "evidence": [
-        "재단·타 대학 공고"
+        "본문"
       ],
       "confidence": "medium",
       "missing": [],
-      "analyzedAt": "2026-10-11T14:50:00.000Z"
+      "engine": "manual"
+    },
+    {
+      "id": "26765931",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765931",
+      "posted": "2026-08-26",
+      "type": "scholarship",
+      "files": [
+        "2026년도 익산사랑 장학생 선발 공고문.hwp"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:22:39.871Z",
+      "kind": "모집",
+      "title": "2026년도 익산사랑 장학생 선발 안내 등록일 2026.08.26. 조회 615",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-09T18:00:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765930",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765930",
+      "posted": "2026-08-26",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:22:48.998Z",
+      "kind": "안내",
+      "title": "한국장학재단 주관 2026 중견기업 일자리 박람회 개최 안내 등록일 2026.08.26. 조회 485",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-08T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765929",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765929",
+      "posted": "2026-08-26",
+      "type": "scholarship",
+      "files": [
+        "(학생용) 장학신청 매뉴얼.pdf"
+      ],
+      "posterCount": 4,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "모집",
+      "title": "2026-2학기 중소기업 취업연계 장학(희망사다리 Ⅰ유형) 신규장학생 선발 안내(9/1(화)~9/18(금)) 등록일 2026.08.26. 조회 1017",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-30T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765909",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765909",
+      "posted": "2026-08-26",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 4,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "모집",
+      "title": "2026-2학기 고졸 후학습자 장학사업(희망사다리 Ⅱ유형) 신규장학생 선발 안내(~9/30(수)) 등록일 2026.08.26. 조회 1087",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-30T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765903",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765903",
+      "posted": "2026-08-25",
+      "type": "scholarship",
+      "files": [
+        "2026년 하반기 장학생 선발계획 공고.hwp"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "모집",
+      "title": "2026년도 하반기 울산연구원 장학생 선발 안내 등록일 2026.08.25. 조회 593",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-23T18:00:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765902",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765902",
+      "posted": "2026-08-25",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "모집",
+      "title": "2026-2학기 고양이엄마(송수경)장학 장학생 선발 안내(1인당 400만원(생활비), ~9/18(금) 16:00까지) 등록일 2026.08.25. 조회 6544",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "1인당 400만원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-10-02T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "nDRIMS 신청",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26765890",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765890",
+      "posted": "2026-08-25",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "안내",
+      "title": "2026년 2학기 선원가족장학사업 안내 등록일 2026.08.25. 조회 625",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "1인당 400만원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-18T16:00:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765887",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765887",
+      "posted": "2026-08-25",
+      "type": "scholarship",
+      "files": [
+        "2026년도 하반기 장학생 선발 신청서식.hwp",
+        "2026년도 하반기 장학생 선발계획 공고문.pdf"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "모집",
+      "title": "(재)달서인재육성장학재단 2026년도 하반기 장학생 선발 안내 등록일 2026.08.25. 조회 766",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-28T18:00:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765869",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765869",
+      "posted": "2026-08-24",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "안내",
+      "title": "2026년 2학기 통영시 대학생 등록금 전액 지원사업 안내 등록일 2026.08.24. 조회 329",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "등록금 전액",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": null,
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "마감일",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765868",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765868",
+      "posted": "2026-08-24",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "안내",
+      "title": "2026년 2학기 통영시 대학생 등록금 전액 지원사업 안내 등록일 2026.08.24. 조회 315",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "등록금 전액",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": null,
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "마감일",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765853",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765853",
+      "posted": "2026-08-24",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "안내",
+      "title": "학자금대출 기등록처리 관련 공지 (8/31일 이후가능) 등록일 2026.08.24. 조회 722",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "등록금 지원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-08-31T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26765846",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765846",
+      "posted": "2026-08-21",
+      "type": "scholarship",
+      "files": [
+        "2026년도 (재)광산장학회 장학생 신청서 및 구비서류 서식.hwp",
+        "(공고)2026년도 (재)광산장학회 장학생 선발계획 공고.pdf"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "모집",
+      "title": "2026년도 (재)광산장학회 장학생 선발 안내 등록일 2026.08.21. 조회 1260",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "200만원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-18T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26765841",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765841",
+      "posted": "2026-08-20",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "안내",
+      "title": "한국장학재단 2026년 장학금 부정수급 자진신고 캠페인 안내 등록일 2026.08.20. 조회 504",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": null,
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "마감일",
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765838",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765838",
+      "posted": "2026-08-20",
+      "type": "scholarship",
+      "files": [
+        "민초27기 장학생 선발공고.pdf"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.437Z",
+      "kind": "모집",
+      "title": "앨트웰민초장학재단 제27기 장학생 선발 안내 등록일 2026.08.20. 조회 1648",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "40만원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-18T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26765827",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765827",
+      "posted": "2026-08-19",
+      "type": "scholarship",
+      "files": [
+        "제7기 경원장학재단 장학생 선발 안내 공고문.pdf"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026년도 제7기 경원장학재단 장학생 선발 안내 등록일 2026.08.19. 조회 1626",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": null,
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "마감일",
+        "지원 금액"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765824",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765824",
+      "posted": "2026-08-19",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "결과발표",
+      "title": "2026-2학기 월드머시코리아 서류합격자 면접 일정 안내 등록일 2026.08.19. 조회 1312",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": null,
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "마감일",
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765808",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765808",
+      "posted": "2026-08-18",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "안내",
+      "title": "2026-2학기 주거안정장학금 우선지원 및 지원제외 기준 안내 등록일 2026.08.18. 조회 1388",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-09T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765792",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765792",
+      "posted": "2026-08-14",
+      "type": "scholarship",
+      "files": [
+        "2026년 손태희장학재단 4기 장학생 선발 공고문.pdf"
+      ],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026년도 손태희장학재단 장학생 선발 안내 등록일 2026.08.14. 조회 2505",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-04T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765783",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765783",
+      "posted": "2026-08-13",
+      "type": "scholarship",
+      "files": [
+        "1. 신청서.hwp",
+        "2. 연구실적∙계획서(양식).pptx"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026학년도 이상호.박순엽 장학 선발 안내(~9/4) 등록일 2026.08.13. 조회 4075",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "2,000,000원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-04T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "nDRIMS 신청",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "check"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26765782",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765782",
+      "posted": "2026-08-13",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "안내",
+      "title": "2026-2학기 복지장학2(면학) 장학 안내 등록일 2026.08.13. 조회 2462",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "등록금 지원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": null,
+      "deadlineText": "",
+      "apply": "nDRIMS 신청",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "마감일"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765781",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765781",
+      "posted": "2026-08-13",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "결과발표",
+      "title": "2026-2학기 동국인재육성장학 선발 및 결과발표 안내 등록일 2026.08.13. 조회 2763",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "등록금 지원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-08-21T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "nDRIMS 신청",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26765770",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765770",
+      "posted": "2026-08-13",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026학년도 2학기 월드머시코리아장학생 선발 안내(~8/17(월)) 등록일 2026.08.13. 조회 2093",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-08-17T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765751",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765751",
+      "posted": "2026-08-11",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "세종연구원 2026년도 세종이도인재장학금 장학생 모집(핵심인재육성) 등록일 2026.08.11. 조회 1294",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-09T18:00:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765733",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765733",
+      "posted": "2026-08-10",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026년 2학기 국가장학금 2차 신청 안내(8/12(수)~9/9(수) 18시) 등록일 2026.08.10. 조회 1577",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "등록금 지원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-09T18:00:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765691",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765691",
+      "posted": "2026-08-06",
+      "type": "scholarship",
+      "files": [
+        "02. (모바일) 주거안정장학금 장학생 통합신청 매뉴얼.pdf",
+        "01. (홈페이지) 주거안정장학금 장학생 통합신청 매뉴얼.pdf"
+      ],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026학년도 2학기 2차 주거안정장학금 학생 신청 안내(8/12(수)~9/9(수) 18시) 등록일 2026.08.06. 조회 1319",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-09T18:00:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765690",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765690",
+      "posted": "2026-08-06",
+      "type": "scholarship",
+      "files": [
+        "[공고]2026년 하반기 군산시 대학생 학자금 이자지원.pdf"
+      ],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "안내",
+      "title": "2026년 하반기 군산시 대학생 학자금 이자 지원사업 안내 등록일 2026.08.06. 조회 494",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-09-09T18:00:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765670",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765670",
+      "posted": "2026-08-04",
+      "type": "scholarship",
+      "files": [
+        "2026년 제2회 대학생 학자금대출 이자지원 공고문.pdf"
+      ],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026년 제2차 서울시 학자금대출이자 지원 사업 신청 안내 등록일 2026.08.04. 조회 694",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-08-09T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765625",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765625",
+      "posted": "2026-07-31",
+      "type": "scholarship",
+      "files": [
+        "[가송재단] 장학신청서류.hwp"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026-2학기 가송재단 장학생 선발 안내(~8/9) 등록일 2026.07.31. 조회 2784",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "500만원",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-08-09T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "nDRIMS 신청",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26765595",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765595",
+      "posted": "2026-07-30",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026년 한미 첨단분야 청년교류 지원사업 제6기 장학생 선발 등록일 2026.07.30. 조회 1529",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-08-09T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765593",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765593",
+      "posted": "2026-07-30",
+      "type": "scholarship",
+      "files": [
+        "공공데이터 홍보 리플릿(20x21cm).pdf",
+        "붙임1. 한국장학재단 공공데이터 개방 목록.xlsx"
+      ],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "안내",
+      "title": "한국장학재단 공공데이터 개방 및 활용 안내 등록일 2026.07.30. 조회 834",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": null,
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "마감일",
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765589",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765589",
+      "posted": "2026-07-30",
+      "type": "scholarship",
+      "files": [
+        "개인정보+수집제공이용+동의서+및+서약서.pdf"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026학년도 2학기 해성문화재단 장학생 선발 안내(~8/2(일)까지) 등록일 2026.07.30. 조회 1755",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "등록금 전액",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-08-02T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "nDRIMS 신청",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [],
+      "engine": "rules"
+    },
+    {
+      "id": "26765586",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765586",
+      "posted": "2026-07-30",
+      "type": "scholarship",
+      "files": [],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026년 하반기 서울인재대학장학금 장학생 선발 등록일 2026.07.30. 조회 1726",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-08-02T23:59:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765584",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765584",
+      "posted": "2026-07-30",
+      "type": "scholarship",
+      "files": [
+        "2026년 5·18희망장학생 모집공고 지원 서식(1~6).hwp",
+        "2026년 5·18희망장학생 모집 공고문.hwp"
+      ],
+      "posterCount": 1,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "모집",
+      "title": "2026년 5·18희망장학생 모집 안내 등록일 2026.07.30. 조회 1100",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": null,
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "마감일",
+        "지원 금액",
+        "포스터 내용(자동 판독 안 됨)"
+      ],
+      "engine": "rules"
+    },
+    {
+      "id": "26765583",
+      "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765583",
+      "posted": "2026-07-30",
+      "type": "scholarship",
+      "files": [
+        "2026년 하반기 대학(원)생 학자금대출 이자지원사업 공고문.pdf"
+      ],
+      "posterCount": 0,
+      "analyzed": false,
+      "analyzedAt": "2026-10-12T17:23:20.438Z",
+      "kind": "안내",
+      "title": "2026년 하반기 울산광역시 대학(원)생 학자금대출 이자지원사업 등록일 2026.07.30. 조회 499",
+      "org": "",
+      "target": [],
+      "quota": "인원 미기재",
+      "benefit": "",
+      "benefitNote": "",
+      "applyStart": null,
+      "deadline": "2026-08-30T18:00:00+09:00",
+      "deadlineText": "",
+      "apply": "",
+      "grades": {
+        "fresh": "check",
+        "current": "check",
+        "transfer": "check",
+        "graduate": "no"
+      },
+      "notes": {},
+      "allGrades": false,
+      "gradOnly": false,
+      "evidence": [
+        "본문"
+      ],
+      "confidence": "low",
+      "missing": [
+        "지원 금액"
+      ],
+      "engine": "rules"
     }
   ]
 }
