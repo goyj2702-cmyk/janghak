@@ -1,0 +1,34 @@
+name: 폴더 정리 (한 번만 실행)
+
+on: workflow_dispatch
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 파일을 원래 폴더로 옮기기
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p src/assets scripts/lib scripts/test public/data data
+          mv_() { if [ -f "$1" ]; then git mv -f "$1" "$2"; fi; }
+          mv_ App.jsx src/App.jsx
+          mv_ main.jsx src/main.jsx
+          mv_ index.css src/index.css
+          for p in head jacket sit stand wagon; do mv_ "$p.png" "src/assets/$p.png"; done
+          mv_ crawl.mjs scripts/crawl.mjs
+          mv_ extract.mjs scripts/lib/extract.mjs
+          mv_ extract.test.mjs scripts/test/extract.test.mjs
+          mv_ notices.json public/data/notices.json
+          mv_ overrides.json data/overrides.json
+          mv_ cache.json data/cache.json
+          mv_ download .gitignore
+          git rm -q --ignore-unmatch daily-update.yml keepalive.yml
+          git status --short
+          git commit -m "폴더 구조 정리"
+          git push
