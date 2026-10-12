@@ -135,8 +135,11 @@ export function findDeadline(text, posted) {
     m = Number(m); d = Number(d);
     if (!(m >= 1 && m <= 12 && d >= 1 && d <= 31)) return;
     let year = y ? Number(y.length === 2 ? "20" + y : y) : year0;
-    let date = new Date(`${year}-${pad(m)}-${pad(d)}T00:00:00+09:00`);
-    if (!y && pm && date < new Date(pm.getTime() - 20 * 86400000)) { year += 1; date = new Date(`${year}-${pad(m)}-${pad(d)}T00:00:00+09:00`); }
+    // 연도 없는 날짜: 연말(10~12월) 게시글의 1~3월 날짜만 다음 해로 봅니다.
+    if (!y && pm && pm.getMonth() >= 9 && m <= 3) year += 1;
+    // 2월 30일처럼 없는 날짜는 버립니다.
+    const check = new Date(Date.UTC(year, m - 1, d));
+    if (check.getUTCMonth() !== m - 1 || check.getUTCDate() !== d) return;
     cands.push({ date: `${year}-${pad(m)}-${pad(d)}`, time: hh != null ? `${pad(hh)}:${pad(mm ?? 0)}` : "", idx });
   };
   const re = /(?:(20\d{2}|\d{2})\s*[.\-/년]\s*)?(\d{1,2})\s*[.\-/월]\s*(\d{1,2})\s*일?\.?\s*(?:\([월화수목금토일]\))?\s*(?:(?:오전|오후)?\s*(\d{1,2})\s*(?::|시)\s*(\d{2})?)?/g;
@@ -163,9 +166,14 @@ export function findAmount(text) {
   return "";
 }
 
+/** 게시판 제목 영역에 붙어 오는 "등록일 … 조회 …" 같은 꼬리를 떼어 냅니다. */
+export function cleanTitle(t) {
+  return String(t).replace(/\s*(등록일|작성일|조회수?|작성자)\s*[:：]?\s*[\d.\-\s]*.*$/, "").replace(/\s+/g, " ").trim();
+}
+
 /** 본문 텍스트만으로 SCHEMA 모양의 결과를 만듭니다 (신뢰도 낮음 표시). */
 export function ruleExtract(post) {
-  const title = (post.title ?? "").replace(/^\s*\[[^\]]*\]\s*/, "").replace(/\s*\([^)]*~[^)]*\)\s*$/, "").trim();
+  const title = cleanTitle(post.title ?? "").replace(/^\s*\[[^\]]*\]\s*/, "").replace(/\s*\([^)]*~[^)]*\)\s*$/, "").trim();
   const text = `${post.title ?? ""}\n${post.text ?? ""}`;
   const kind = KIND_RULES.find(([re]) => re.test(post.title ?? ""))?.[1] ?? "안내";
   const dl = findDeadline(text, post.posted);
