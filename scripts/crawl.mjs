@@ -22,7 +22,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import * as cheerio from "cheerio";
-import { SCHEMA, SYSTEM_PROMPT, JSON_SHAPE_HINT, normalize, findIds, ruleExtract } from "./lib/extract.mjs";
+import { SCHEMA, SYSTEM_PROMPT, JSON_SHAPE_HINT, normalize, findIds, ruleExtract, cleanTitle } from "./lib/extract.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT_FILE = path.join(ROOT, "public/data/notices.json");
@@ -131,7 +131,7 @@ export function parseDetail(html, id) {
   });
 
   const title =
-    $box.find("h3, h4, .tit, .title, [class*='subject'], [class*='title']").first().text().replace(/\s+/g, " ").trim() || null;
+    cleanTitle($box.find("h3, h4, .tit, .title, [class*='subject'], [class*='title']").first().text()) || null;
 
   return { id, url: detailUrl(id), title, posted, text, images, files, prevId, nextId };
 }
@@ -229,32 +229,63 @@ function promptText(post, media, maxText = MAX_TEXT) {
 class QuotaError extends Error {}
 
 /* ───────────── 분석 엔진 ───────────── */
-async function analyzeGithub(post, media, small = false) {
-  if (small) media = { ...media, images: media.images.slice(0, 1), pdfTexts: [] };
-  const res = await fetch("https://models.github.ai/inference/chat/completions", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({
+/** 응답 본문에서 JSON 객체를 꺼냅니다. 없으면 null */
+function parseJsonObject(text) {
+  if (!text) return null;
+  const i = text.indexOf("{"), j = text.lastIndexOf("}");
+  if (i < 0 || j <= i) return null;
+  try { return JSON.parse(text.slice(i, j + 1)); } catch { return null; }
+}
+
+/**
+ * GitHub Models 호출. 빈 응답이 오면 단계적으로 요청을 줄여 다시 시도합니다.
+ *  1차: 포스터 이미지 + 본문 + JSON 모드
+ *  2차: 이미지 1장 + 짧은 본문, JSON 모드 끔
+ *  3차: 이미지 없이 본문만
+ */
+async function analyzeGithub(post, media) {
+  const attempts = [
+    { images: media.images, pdf: media.pdfTexts, text: MAX_TEXT, jsonMode: true },
+    { images: media.images.slice(0, 1), pdf: [], text: 1200, jsonMode: false },
+    { images: [], pdf: media.pdfTexts, text: MAX_TEXT, jsonMode: false },
+  ];
+  const problems = [];
+  for (const [n, at] of attempts.entries()) {
+    if (n === 2 && !media.images.length && !problems.length) break;
+    if (n > 0) await sleep(4000);
+    const m = { images: at.images, pdfTexts: at.pdf };
+    const body = {
       model: MODEL,
       temperature: 0,
-      max_tokens: 1500,
-      response_format: { type: "json_object" },
+      max_tokens: 2000,
       messages: [
         { role: "system", content: `${SYSTEM_PROMPT}\n\n${JSON_SHAPE_HINT}` },
         { role: "user", content: [
-          ...media.images.map((i) => ({ type: "image_url", image_url: { url: `data:${i.mt};base64,${i.data}`, detail: "high" } })),
-          { type: "text", text: promptText(post, media, small ? 1000 : MAX_TEXT) },
+          ...at.images.map((i) => ({ type: "image_url", image_url: { url: `data:${i.mt};base64,${i.data}`, detail: "high" } })),
+          { type: "text", text: promptText(post, m, at.text) },
         ] },
       ],
-    }),
-  });
-  const json = await res.json().catch(() => ({}));
-  if (res.status === 429 || res.status === 403) throw new QuotaError(`GitHub Models 한도/권한 (${res.status}): ${json?.error?.message ?? ""}`);
-  const msg = json?.error?.message ?? JSON.stringify(json).slice(0, 200);
-  if (!res.ok && !small && (res.status === 413 || /token|too large|length/i.test(msg))) return analyzeGithub(post, media, true); // 요청이 크면 줄여서 한 번 더
-  if (!res.ok) throw new Error(`GitHub Models ${res.status}: ${msg}`);
-  const text = json.choices?.[0]?.message?.content ?? "";
-  return JSON.parse(text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1));
+    };
+    if (at.jsonMode) body.response_format = { type: "json_object" };
+    const res = await fetch("https://models.github.ai/inference/chat/completions", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(body),
+    });
+    const raw = await res.text();
+    let json = null;
+    try { json = JSON.parse(raw); } catch { /* 본문이 JSON이 아님 */ }
+    const msg = json?.error?.message ?? raw.slice(0, 200);
+    if (res.status === 429 || res.status === 401 || res.status === 403) throw new QuotaError(`GitHub Models ${res.status}: ${msg}`);
+    if (!res.ok) { problems.push(`${n + 1}차 HTTP ${res.status}: ${msg}`); continue; }
+    const choice = json?.choices?.[0];
+    const content = choice?.message?.content;
+    const text = Array.isArray(content) ? content.map((c) => c.text ?? "").join("") : content ?? "";
+    const result = parseJsonObject(text);
+    if (result) return result;
+    problems.push(`${n + 1}차 빈/잘못된 응답 (finish_reason=${choice?.finish_reason ?? "?"}, 길이=${text.length}, 본문=${raw.slice(0, 160).replace(/\s+/g, " ")})`);
+  }
+  throw new Error(problems.join(" | "));
 }
 
 async function analyzeAnthropic(post, media) {
@@ -290,7 +321,7 @@ async function main() {
   log(`게시글 ${posts.length}건 수집`);
 
   const notices = [];
-  let aiOn = PROVIDER !== "rules", calls = 0, fresh = 0, reused = 0, rules = 0, failed = 0;
+  let aiOn = PROVIDER !== "rules", streak = 0, calls = 0, fresh = 0, reused = 0, rules = 0, failed = 0;
   // 최신 글부터 AI 분석 (한도에 걸려도 새 공고가 먼저 처리되도록)
   for (const p of [...posts].sort((a, b) => (b.posted ?? "").localeCompare(a.posted ?? ""))) {
     const h = hash(p);
@@ -306,10 +337,13 @@ async function main() {
         cache[p.id] = a;
         fresh++;
         log(`AI 분석 #${p.id} ← 이미지 ${media.images.length}, PDF ${media.pdfTexts.length}`);
+        streak = 0;
       } catch (e) {
         failed++;
+        streak++;
         log(`AI 분석 실패 #${p.id}:`, e.message);
-        if (e instanceof QuotaError) { aiOn = false; log("AI 한도에 도달해 남은 글은 규칙 기반으로 처리하고 내일 다시 시도합니다."); }
+        if (e instanceof QuotaError) { aiOn = false; log("AI 한도·권한 문제로 남은 글은 규칙 기반으로 처리하고 내일 다시 시도합니다."); }
+        else if (streak >= 3) { aiOn = false; log("AI 분석이 연속 3번 실패해 오늘은 멈추고 규칙 기반으로 처리합니다 (무료 한도 아끼기)."); }
       }
     }
     if (!a) { a = { analyzedAt: new Date().toISOString(), engine: "rules", result: ruleExtract(p) }; rules++; } // 캐시하지 않음 → 다음 실행 때 AI 재시도
