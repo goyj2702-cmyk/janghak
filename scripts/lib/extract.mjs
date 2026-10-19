@@ -82,7 +82,7 @@ export function normalize(post, analysis) {
     ...base,
     analyzed: true,
     analyzedAt: analysis.analyzedAt,
-    kind: r.notice_kind,
+    kind: "모집", // 게시판의 모든 글을 모집 공고로 표시 (AI가 결과발표·안내로 봐도 숨기지 않음)
     title: r.title || post.title || `장학공지 #${post.id}`,
     org: r.organization,
     target: (r.target_tags ?? []).slice(0, 6),
@@ -124,7 +124,10 @@ export const JSON_SHAPE_HINT = `다른 말 없이 아래 키를 모두 가진 JS
 "evidence":["본문|포스터|첨부PDF"],"confidence":"high|medium|low","missing":[""]}`;
 
 /* ───────────── AI 없이 쓰는 규칙 기반 추출 (무료 대체 경로) ───────────── */
-const KIND_RULES = [[/결과|합격자|최종\s*선발자|발표/, "결과발표"], [/선발|모집|신청|추천|지원\s*안내|장학생/, "모집"]];
+const KIND_RULES = [
+  [/결과\s*(안내|발표)|합격자|최종\s*선발자|선발자\s*발표|면접\s*일정/, "결과발표"],
+  [/선발|모집|신청|추천|장학생|장학금|지원\s*사업|지원사업|등록금\s*(지원|반값)|학자금|이자\s*지원|생활비\s*지원/, "모집"],
+];
 
 /** "10.23(금) 17:00", "~10/23", "2026. 10. 30.(금) 18:00", "10월 31일" 같은 마감 표현을 찾습니다. */
 export function findDeadline(text, posted) {
@@ -151,6 +154,13 @@ export function findDeadline(text, posted) {
     if (hh != null && hh > 23) hh = null;
     push(m[1], m[2], m[3], hh, m[5] != null ? Number(m[5]) : null, m.index);
   }
+  // 게시일보다 100일 넘게 뒤의 날짜(지급일·학기 시작 등)는 마감 후보에서 뺍니다. 지난 날짜는 '마감됨' 판단에 쓰이므로 남깁니다.
+  if (pm) {
+    const hi = pm.getTime() + 100 * 86400000;
+    for (let i = cands.length - 1; i >= 0; i--) {
+      if (new Date(cands[i].date + "T00:00:00+09:00").getTime() > hi) cands.splice(i, 1);
+    }
+  }
   if (!cands.length) return null;
   // '~' 또는 '까지' 바로 앞뒤의 날짜를 우선, 없으면 가장 늦은 날짜
   const near = cands.filter((c) => /~\s*$|^\s*$/.test(text.slice(Math.max(0, c.idx - 3), c.idx)) || /까지|마감/.test(text.slice(c.idx, c.idx + 30)));
@@ -175,7 +185,7 @@ export function cleanTitle(t) {
 export function ruleExtract(post) {
   const title = cleanTitle(post.title ?? "").replace(/^\s*\[[^\]]*\]\s*/, "").replace(/\s*\([^)]*~[^)]*\)\s*$/, "").trim();
   const text = `${post.title ?? ""}\n${post.text ?? ""}`;
-  const kind = KIND_RULES.find(([re]) => re.test(post.title ?? ""))?.[1] ?? "안내";
+  const kind = "모집"; // 장학공지 게시판의 글은 모두 모집 공고로 다룹니다
   const dl = findDeadline(text, post.posted);
   const amount = findAmount(text);
   const g = (re) => (re.test(text) ? "no" : "check");

@@ -195,6 +195,16 @@ async function pdfText(buf) {
   return out.replace(/\s+\n/g, "\n").trim();
 }
 
+/** 포스터를 AI 요청에 맞게 줄입니다 (가로 1000px·세로 2400px 이내 JPEG). sharp가 없으면 null */
+let sharpMod;
+async function shrinkImage(buf) {
+  if (sharpMod === undefined) sharpMod = await import("sharp").then((m) => m.default).catch(() => null);
+  if (!sharpMod) return null;
+  try {
+    return await sharpMod(buf, { failOn: "none" }).rotate().resize({ width: 1000, height: 2400, fit: "inside", withoutEnlargement: true }).flatten({ background: "#ffffff" }).jpeg({ quality: 82 }).toBuffer();
+  } catch { return null; }
+}
+
 async function gatherMedia(post) {
   const images = [], pdfTexts = [], skipped = [];
   const imageUrls = [...post.images, ...post.files.filter((f) => f.url && /\.(jpe?g|png|gif|webp)$/i.test(f.name)).map((f) => f.url)];
@@ -203,6 +213,8 @@ async function gatherMedia(post) {
       const { body, type } = await get(u, { binary: true, referer: post.url });
       const mt = sniffImage(body, type);
       if (!mt) { skipped.push(`이미지 형식 불명: ${u}`); continue; }
+      const small = await shrinkImage(body);
+      if (small) { images.push({ mt: "image/jpeg", data: small.toString("base64") }); continue; }
       if (body.length > MAX_IMAGE_BYTES) { skipped.push(`이미지 용량 초과: ${u}`); continue; }
       images.push({ mt, data: body.toString("base64") });
     } catch (e) { skipped.push(e.message); }
@@ -315,6 +327,11 @@ const hash = (p) => crypto.createHash("sha256").update(JSON.stringify([p.text, p
 
 async function main() {
   const cache = JSON.parse(await fs.readFile(CACHE_FILE, "utf8").catch(() => "{}"));
+  // 처음 수집된 날짜를 이어 가져와 NEW 표시에 씁니다
+  const prev = JSON.parse(await fs.readFile(OUT_FILE, "utf8").catch(() => "{}"));
+  const firstSeen = Object.fromEntries((prev.notices ?? []).map((n) => [n.id, n.firstSeen ?? n.posted ?? null]));
+  const nowIso = new Date().toISOString();
+  const aiErrors = [];
   const overrides = JSON.parse(await fs.readFile(OVERRIDES_FILE, "utf8").catch(() => "{}"));
   log(`수집 시작: 최근 ${LOOKBACK_DAYS}일, 분석 엔진 ${PROVIDER}${PROVIDER !== "rules" ? ` (${MODEL}, 최대 ${MAX_AI_CALLS}건)` : ""}`);
   const posts = await discover();
@@ -342,6 +359,7 @@ async function main() {
         failed++;
         streak++;
         log(`AI 분석 실패 #${p.id}:`, e.message);
+        aiErrors.push({ id: p.id, at: new Date().toISOString(), message: String(e.message).slice(0, 600) });
         if (e instanceof QuotaError) { aiOn = false; log("AI 한도·권한 문제로 남은 글은 규칙 기반으로 처리하고 내일 다시 시도합니다."); }
         else if (streak >= 3) { aiOn = false; log("AI 분석이 연속 3번 실패해 오늘은 멈추고 규칙 기반으로 처리합니다 (무료 한도 아끼기)."); }
       }
@@ -349,6 +367,7 @@ async function main() {
     if (!a) { a = { analyzedAt: new Date().toISOString(), engine: "rules", result: ruleExtract(p) }; rules++; } // 캐시하지 않음 → 다음 실행 때 AI 재시도
     const n = normalize(p, a);
     n.engine = a.engine;
+    n.firstSeen = firstSeen[p.id] ?? nowIso;
     if (a.engine === "rules") n.analyzed = false;
     const { _note, ...fix } = overrides[p.id] ?? {};
     notices.push(overrides[p.id] ? { ...n, ...fix, analyzed: true, engine: "manual" } : n);
@@ -357,7 +376,8 @@ async function main() {
   for (const id of Object.keys(cache)) if (!keep.has(id)) delete cache[id];
 
   notices.sort((x, y) => (y.posted ?? "").localeCompare(x.posted ?? ""));
-  const out = { updatedAt: new Date().toISOString(), lookbackDays: LOOKBACK_DAYS, model: PROVIDER === "rules" ? null : MODEL, source: `${BASE}/article/${BOARD}/list`, notices };
+  const status = { provider: PROVIDER, model: MODEL, aiCalls: calls, aiOk: fresh, aiReused: reused, aiFailed: failed, rules, errors: aiErrors.slice(0, 8) };
+  const out = { updatedAt: new Date().toISOString(), lookbackDays: LOOKBACK_DAYS, model: PROVIDER === "rules" ? null : MODEL, source: `${BASE}/article/${BOARD}/list`, status, notices };
   await fs.mkdir(path.dirname(OUT_FILE), { recursive: true });
   await fs.mkdir(path.dirname(CACHE_FILE), { recursive: true });
   await fs.writeFile(OUT_FILE, JSON.stringify(out, null, 2));

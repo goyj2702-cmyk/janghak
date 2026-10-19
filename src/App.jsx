@@ -17,6 +17,10 @@ const GRADES = [
 ];
 const gradeLabel = (g) => GRADES.find((x) => x.id === g)?.label ?? "";
 const eligibleFor = (n, g) => g === "all" || n.grades?.[g] !== "no";
+const NEW_DAYS = 7; // 게시일 기준 며칠 동안 NEW 표시
+const kstDay = (d) => new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Seoul" }).format(d);
+const daysAgo = (ymd, now) => (ymd ? Math.round((new Date(kstDay(now) + "T00:00:00+09:00") - new Date(ymd + "T00:00:00+09:00")) / 86400000) : Infinity);
+const isNew = (n, now) => daysAgo(n.posted, now) <= NEW_DAYS;
 const safeGet = (k, d) => { try { return localStorage.getItem(k) ?? d; } catch { return d; } };
 const safeSet = (k, v) => { try { localStorage.setItem(k, v); } catch { /* 저장 불가 환경 */ } };
 const fmtDate = (iso) => {
@@ -50,7 +54,11 @@ function Row({ icon, children }) {
   );
 }
 
-function NoticeCard({ n, grade }) {
+function NewBadge() {
+  return <span className="ml-1.5 inline-flex -translate-y-0.5 items-center rounded-md bg-brand-500 px-1.5 py-0.5 align-middle text-[11px] font-bold leading-none tracking-wide text-white">NEW</span>;
+}
+
+function NoticeCard({ n, grade, now }) {
   const note = grade !== "all" && n.grades?.[grade] !== "yes" ? n.notes?.[grade] : null;
   const fromPoster = n.posterCount > 0 && n.analyzed;
   return (
@@ -68,7 +76,7 @@ function NoticeCard({ n, grade }) {
       </div>
 
       <div className="flex flex-col gap-1">
-        <h3 className="text-[18px] font-bold leading-snug">{n.title}</h3>
+        <h3 className="text-[18px] font-bold leading-snug">{n.title}{isNew(n, now) && <NewBadge />}</h3>
         <p className="font-display text-[26px] leading-tight text-brand-600">{n.benefit || "금액 원문 확인"}</p>
         {n.benefitNote && <p className="text-[13px] text-mute">{n.benefitNote}</p>}
       </div>
@@ -83,7 +91,7 @@ function NoticeCard({ n, grade }) {
         )}
         {n.quota && <Row icon={<IconUsers />}><span className="text-[14px]">{n.quota}</span></Row>}
         <Row icon={<IconCal />}>
-          <p className="text-[14px] font-semibold tabular-nums">{n.deadlineText || fmtDate(n.deadline) || "마감일 미공개"}</p>
+          <p className="text-[14px] font-semibold tabular-nums">{n.deadlineText || fmtDate(n.deadline) || "마감일 원문 확인"}</p>
           {n.apply && <p className="text-[12.5px] text-mute">{n.apply}</p>}
         </Row>
       </div>
@@ -120,12 +128,12 @@ function NoticeCard({ n, grade }) {
   );
 }
 
-function PendingRow({ n }) {
+function PendingRow({ n, now }) {
   return (
     <a href={n.url} target="_blank" rel="noopener noreferrer" aria-label={`${n.title} 원본 공지 열기`} className="group flex items-center gap-3 rounded-2xl border border-line bg-white px-4 py-3 shadow-card transition hover:border-brand-500/60">
       <span className="grid size-10 flex-none place-items-center rounded-xl bg-brand-50 text-brand-600"><IconImage className="size-5" /></span>
       <div className="min-w-0 flex-1">
-        <p className="truncate font-semibold">{n.title}</p>
+        <p className="truncate font-semibold">{n.title}{isNew(n, now) && <NewBadge />}</p>
         <p className="truncate text-[12.5px] text-mute">{[n.org, n.posted && `${n.posted.slice(5).replace("-", ".")} 게시`, "포스터·첨부 내용을 확인하지 못함"].filter(Boolean).join(" · ")}</p>
       </div>
       <span className="hidden items-center gap-1 text-[13px] font-semibold text-brand-700 sm:inline-flex">원문 <IconArrow className="size-4" /></span>
@@ -185,12 +193,14 @@ export default function App() {
     setTimeout(() => setPause(false), 450);
   };
 
-  const { open, undated, unread, closedCount } = useMemo(() => {
-    const list = (data?.notices ?? []).filter((n) => n.kind === "모집");
+  const { open, undated, unread, fresh, closedCount } = useMemo(() => {
+    const list = data?.notices ?? []; // 장학공지 게시판의 모든 글을 보여줍니다
     return {
       open: list.filter((n) => n.deadline && new Date(n.deadline) >= now).sort((a, b) => a.deadline.localeCompare(b.deadline)),
-      undated: list.filter((n) => !n.deadline && n.analyzed),
-      unread: list.filter((n) => !n.deadline && !n.analyzed),
+      // 마감일이 없는 공고: 최근 30일 안의 글은 카드로 크게, 그보다 오래된 글은 아래 목록으로
+      undated: list.filter((n) => !n.deadline && (n.analyzed || daysAgo(n.posted, now) <= 30)).sort((a, b) => (b.posted ?? "").localeCompare(a.posted ?? "")),
+      unread: list.filter((n) => !n.deadline && !n.analyzed && daysAgo(n.posted, now) > 30),
+      fresh: list.filter((n) => isNew(n, now) && !(n.deadline && new Date(n.deadline) < now)),
       closedCount: list.filter((n) => n.deadline && new Date(n.deadline) < now).length,
     };
   }, [data, now]);
@@ -256,7 +266,7 @@ export default function App() {
               {[
                 { k: "지원 가능", v: eligible.length, s: grade === "all" ? "마감 전 전체" : `${gradeLabel(grade)} 기준` },
                 { k: "7일 안에 마감", v: thisWeek, s: "서둘러 확인" },
-                { k: "마감일 미공개", v: undated.length, s: "내용은 분석 완료" },
+                { k: "새 공고", v: fresh.length, s: `최근 ${NEW_DAYS}일 게시` },
               ].map((x) => (
                 <div key={x.k} className="min-w-0 rounded-2xl border border-line bg-white px-4 py-3 shadow-card">
                   <p className="truncate text-[12.5px] font-semibold text-mute">{x.k}</p>
@@ -265,6 +275,22 @@ export default function App() {
                 </div>
               ))}
             </div>
+            {fresh.length > 0 && (
+              <div className="flex flex-col gap-2 rounded-2xl border border-brand-100 bg-brand-50 px-4 py-3">
+                <p className="text-[13px] font-semibold text-brand-700">새로 올라온 장학 공고</p>
+                <ul className="flex flex-col gap-1.5">
+                  {fresh.map((n) => (
+                    <li key={n.id} className="min-w-0">
+                      <a href={n.url} target="_blank" rel="noopener noreferrer" className="group flex min-w-0 items-center gap-2 text-[14px]">
+                        <span className="flex-none rounded-md bg-brand-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white">NEW</span>
+                        <span className="min-w-0 truncate font-medium group-hover:text-brand-700 group-hover:underline">{n.title}</span>
+                        <span className="ml-auto flex-none text-[12px] tabular-nums text-mute">{n.posted?.slice(5).replace("-", ".")}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <label className="relative sm:max-w-md">
               <span className="sr-only">장학 검색</span>
               <IconSearch className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute" />
@@ -286,21 +312,21 @@ export default function App() {
           <>
             {everyone.length > 0 && (
               <Section title="모든 학년 대상" count={everyone.length} desc="학년 제한 없이 지원할 수 있어요">
-                <Grid>{everyone.map((n) => <NoticeCard key={n.id} n={n} grade={grade} />)}</Grid>
+                <Grid>{everyone.map((n) => <NoticeCard key={n.id} n={n} grade={grade} now={now} />)}</Grid>
               </Section>
             )}
             {specific.length > 0 && (
               <Section title={grade === "all" ? "마감이 가까운 순" : `${gradeLabel(grade)} 맞춤 공고`} count={specific.length}
                 desc={grade === "all" ? "학년을 고르면 맞춤 공고만 볼 수 있어요" : "조건 확인이 필요한 공고는 카드에 이유를 적었어요"}>
-                <Grid>{specific.map((n) => <NoticeCard key={n.id} n={n} grade={grade} />)}</Grid>
+                <Grid>{specific.map((n) => <NoticeCard key={n.id} n={n} grade={grade} now={now} />)}</Grid>
               </Section>
             )}
           </>
         )}
 
         {data && !pause && undatedShown.length > 0 && (
-          <Section title="올해 마감일이 아직 공개되지 않은 공고" count={undatedShown.length} desc="지원 대상·금액은 확인했어요. 마감일이 나오면 위 목록으로 옮겨져요">
-            <Grid>{undatedShown.map((n) => <NoticeCard key={n.id} n={n} grade={grade} />)}</Grid>
+          <Section title="마감일 확인이 필요한 공고" count={undatedShown.length} desc="새로 올라왔거나 마감일이 공고에 없는 글이에요. 원문에서 마감일을 확인하세요">
+            <Grid>{undatedShown.map((n) => <NoticeCard key={n.id} n={n} grade={grade} now={now} />)}</Grid>
           </Section>
         )}
 
@@ -313,7 +339,7 @@ export default function App() {
                 <p className="mt-1 text-[13.5px] text-mute">포스터와 첨부파일, 다른 공개 공고 어디에서도 내용을 확인하지 못했어요. 원문에서 직접 확인해 주세요.</p>
               </div>
             </div>
-            <div className="grid gap-2 md:grid-cols-2">{unreadShown.map((n) => <PendingRow key={n.id} n={n} />)}</div>
+            <div className="grid gap-2 md:grid-cols-2">{unreadShown.map((n) => <PendingRow key={n.id} n={n} now={now} />)}</div>
           </section>
         )}
 

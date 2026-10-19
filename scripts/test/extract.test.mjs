@@ -77,5 +77,27 @@ test("규칙 기반: 금액·분류", () => {
   assert.equal(r.deadline_date, "2026-10-23");
   assert.equal(r.apply_method, "nDRIMS 신청");
   assert.ok(r.missing.includes("포스터 내용(자동 판독 안 됨)"));
-  assert.equal(ruleExtract({ id: "2", title: "2026-2학기 고양이엄마장학 장학생 선발 결과 안내", text: "", posted: "2026-10-06", images: [] }).notice_kind, "결과발표");
+});
+
+import { cleanTitle } from "../lib/extract.mjs";
+test("실제 수집 결과에서 나온 문제들", () => {
+  assert.equal(cleanTitle("2026년 2학기 파안장학 선발 안내 등록일 2026.09.17. 조회 1423"), "2026년 2학기 파안장학 선발 안내");
+  assert.equal(cleanTitle("[홍보] 우양재단 2026년 동행 장학생 모집 안내"), "[홍보] 우양재단 2026년 동행 장학생 모집 안내");
+  // 없는 날짜(2월 30일)는 버림
+  assert.equal(findDeadline("제출: 2.30까지", "2026-09-01"), null);
+  // 9월 게시글의 6.30은 다음 해로 넘기지 않음 (지난 날짜 → 마감 처리)
+  assert.equal(findDeadline("대상 이자: 2026.1.1.~6.30. 발생분, 신청 9.2.~9.23. 17:00까지", "2026-09-02").date, "2026-09-23");
+  assert.equal(findDeadline("접수 ~6.30까지", "2026-09-02").date, "2026-06-30");
+  // 11월 게시글의 1월 마감은 다음 해
+  assert.equal(findDeadline("신청: 1/15(금)까지", "2026-11-20").date, "2027-01-15");
+});
+
+test("장학공지 게시판의 모든 글은 모집 공고로 분류", () => {
+  const k = (title) => ruleExtract({ id: "x", title, text: "", posted: "2026-10-16", images: [] }).notice_kind;
+  for (const t of ["[홍보] 2026년 2학기 거창군 지역출신 대학생 등록금 지원사업 안내", "2026-2학기 고양이엄마(송수경)장학 장학생 선발 결과 안내", "2026학년도 하계방학 『셧다운』 안내"]) assert.equal(k(t), "모집");
+  assert.equal(normalize({ id: "1", url: "u", posted: "2026-10-01", files: [], images: [] }, { result: { notice_kind: "결과발표", grades: {} } }).kind, "모집");
+});
+test("규칙 추출: 게시일과 동떨어진 날짜는 마감으로 보지 않음", () => {
+  assert.equal(findDeadline("2027. 2. 1.부터 지급, 신청은 홈페이지에서", "2026-10-14"), null);
+  assert.equal(findDeadline("접수: ~11/4(수)까지", "2026-10-19").date, "2026-11-04");
 });
